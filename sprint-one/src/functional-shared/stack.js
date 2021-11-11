@@ -6,7 +6,6 @@ var Stack = function() {
   someInstance.storage = {};
 
   _.extend(someInstance, stackMethods);
-
   return someInstance;
 };
 
