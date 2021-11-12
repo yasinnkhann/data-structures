@@ -72,9 +72,9 @@ myList.addToTail(5);
 myList.addToTail(6);
 
 myList.removeHead();
-console.log('contains: ', myList.contains(4)); // false
+// console.log('contains: ', myList.contains(4));
 
-console.log('myList: ', myList);
+// console.log('myList: ', myList);
 
 /*
  * Complexity: What is the time complexity of the above functions?
