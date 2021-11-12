@@ -9,11 +9,18 @@ var LinkedList = function() {
       list.head = Node(value);
       list.tail = list.head;
       count++;
+    } else if (count === 1) {
+      list.tail = Node(value);
+      list.head.next = list.tail;
+      count++;
+    } else {
+      var formerTail = list.tail;
+      var newTail = Node(value);
+      formerTail.next = newTail;
+      list.head.next = formerTail;
+      list.tail = newTail;
+      count++;
     }
-
-    list.tail = Node(value);
-    list.head.next = list.tail;
-    count++;
   };
 
   list.removeHead = function() {
@@ -21,11 +28,29 @@ var LinkedList = function() {
       return undefined;
     }
 
+    var formerHead = list.head;
+    newHead = formerHead.next;
+    list.head = newHead;
+
     count--;
+    return formerHead.value;
   };
 
   list.contains = function(target) {
 
+    var helperFunc = function(node) {
+      if (node.value === target) {
+        return true;
+      }
+
+      if (node.next === null && node.value !== target) {
+        return false;
+      }
+
+      return helperFunc(node.next);
+    };
+
+    return helperFunc(list.head);
   };
 
   return list;
@@ -40,19 +65,14 @@ var Node = function(value) {
   return node;
 };
 
-// var node1 = Node(12);
-// var node2 = Node(6);
-// node1.next = node2;
-
-// console.log('node1: ', node1);
-// console.log('node2: ', node2);
-
 var myList = LinkedList();
 
 myList.addToTail(4);
 myList.addToTail(5);
-// myList.removeHead();
-// console.log('contains: ', myList.contains(4)) // false
+myList.addToTail(6);
+
+myList.removeHead();
+console.log('contains: ', myList.contains(4)); // false
 
 console.log('myList: ', myList);
 
