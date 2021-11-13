@@ -20,12 +20,14 @@ Graph.prototype.removeNode = function(node) {
     return undefined;
   }
 
-  this.nodeList.splice(this.nodeList.indexOf(node), 1);
+  var location = this.nodeList.indexOf(node);
+
+  this.nodeList.splice(location, 1);
 
   for (var i = 0; i < this.edgeList.length; i++) {
     var edge = this.edgeList[i];
     if ((edge[0] === node || edge[1] === node)) {
-      this.edgeList.splice(edge, 1);
+      this.edgeList.splice(i, 1);
       i--;
     }
   }
@@ -94,7 +96,7 @@ console.log(myGraph.contains(2)); // true
 
 myGraph.removeNode(2);
 
-myGraph.contains(2); // false
+console.log(myGraph.contains(2)); // false
 
 myGraph.addNode(2);
 myGraph.addNode(1);
@@ -104,9 +106,9 @@ myGraph.addEdge(3, 2);
 console.log(myGraph.hasEdge(3, 2)); // true
 console.log(myGraph.hasEdge(3, 1)); // false
 
-console.log(myGraph.addNode(4));
-console.log(myGraph.addNode(5));
-console.log(myGraph.addEdge(5, 4));
+myGraph.addNode(4);
+myGraph.addNode(5);
+myGraph.addEdge(5, 4);
 
 
 console.log(myGraph.hasEdge(4, 5)); // true
@@ -115,5 +117,14 @@ myGraph.removeEdge(5, 4);
 
 myGraph.hasEdge(4, 5); // false
 
+myGraph.addNode(4);
+myGraph.addNode(5);
+myGraph.addEdge(5, 4);
+
+console.log(myGraph.hasEdge(4, 5)); // true
+
+console.log(myGraph.removeNode(5));
+
+console.log(myGraph.hasEdge(4, 5)); // false
 
 console.log(myGraph);
