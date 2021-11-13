@@ -92,26 +92,26 @@ var myGraph = new Graph();
 myGraph.addNode(1);
 myGraph.addNode(2);
 
-console.log(myGraph.contains(2)); // true
+// console.log(myGraph.contains(2)); // true
 
 myGraph.removeNode(2);
 
-console.log(myGraph.contains(2)); // false
+// console.log(myGraph.contains(2)); // false
 
 myGraph.addNode(2);
 myGraph.addNode(1);
 myGraph.addNode(3);
 myGraph.addEdge(3, 2);
 
-console.log(myGraph.hasEdge(3, 2)); // true
-console.log(myGraph.hasEdge(3, 1)); // false
+// console.log(myGraph.hasEdge(3, 2)); // true
+// console.log(myGraph.hasEdge(3, 1)); // false
 
 myGraph.addNode(4);
 myGraph.addNode(5);
 myGraph.addEdge(5, 4);
 
 
-console.log(myGraph.hasEdge(4, 5)); // true
+// console.log(myGraph.hasEdge(4, 5)); // true
 
 myGraph.removeEdge(5, 4);
 
@@ -121,10 +121,10 @@ myGraph.addNode(4);
 myGraph.addNode(5);
 myGraph.addEdge(5, 4);
 
-console.log(myGraph.hasEdge(4, 5)); // true
+// console.log(myGraph.hasEdge(4, 5)); // true
 
 console.log(myGraph.removeNode(5));
 
-console.log(myGraph.hasEdge(4, 5)); // false
+// console.log(myGraph.hasEdge(4, 5)); // false
 
-console.log(myGraph);
+// console.log(myGraph);
