@@ -1,6 +1,6 @@
 var Set = function() {
   var set = Object.create(setPrototype);
-  set._storage = {}; // fix me
+  set._storage = {};
   return set;
 };
 
@@ -24,6 +24,10 @@ setPrototype.remove = function(item) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ set:O(n)
+ add:O(n)
+ contains:O(n)
+ remove:O(n)
  */
 
 var mySet = Set();
@@ -31,12 +35,12 @@ var mySet = Set();
 mySet.add('Susan Sarandon');
 mySet.add('Danny Glover');
 
-console.log(mySet.contains('Danny Glover')); // true
-console.log(mySet.contains('Susan Sarandon')); // true
+// console.log(mySet.contains('Danny Glover')); // true
+// console.log(mySet.contains('Susan Sarandon')); // true
 
 mySet.add('Mel Gibson');
 mySet.remove('Mel Gibson');
 
-console.log(mySet.contains('Mel Gibson')); // false
+// console.log(mySet.contains('Mel Gibson')); // false
 
-console.log(mySet);
+// console.log(mySet);

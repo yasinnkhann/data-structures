@@ -84,6 +84,13 @@ Graph.prototype.forEachNode = function(cb) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ Graph:O(1)
+ ForEachNode:O(n)
+ removeEdge:0(n)
+ addEdge:O(1)
+ addNode:O(1)
+ removeNode:O(n)
+ contains: 0(n)
  */
 
 
@@ -123,7 +130,7 @@ myGraph.addEdge(5, 4);
 
 // console.log(myGraph.hasEdge(4, 5)); // true
 
-console.log(myGraph.removeNode(5));
+// console.log(myGraph.removeNode(5));
 
 // console.log(myGraph.hasEdge(4, 5)); // false
 

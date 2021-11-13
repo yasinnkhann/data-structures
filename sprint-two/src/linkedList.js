@@ -78,4 +78,8 @@ myList.removeHead();
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ //addtoTail: O(1)
+ //removehead: O(1)
+ contains: O(1)
+ linkedList: O(1)
  */
